@@ -5,7 +5,7 @@ let employee = require('./db.json');
 
 router.get('/', (req, res) => {
    let outputJSON = {
-    employees : employee["data"]
+    employee : employee["data"]
    }
    res.json(outputJSON);
 });
@@ -14,7 +14,7 @@ router.get('/by_name/:qname', (req, res) => {
     let query = req.params['qname']
     filtered_employees = employee["data"].filter(q => q.employee_name.includes(query))
     let outputJSON = {
-        employees : filtered_employees
+        employee : filtered_employees
     }
     res.json(outputJSON);
 });
@@ -29,10 +29,9 @@ router.get('/by_age/:start_age/:end_age', (req, res) => {
         return false;
     })
     let outputJSON = {
-        employees : filtered_employees
+        employee : filtered_employees
     }
     res.json(outputJSON);
 });
-
 
 module.exports = router;
