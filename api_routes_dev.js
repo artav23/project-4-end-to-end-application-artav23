@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const fs = require('fs');
-let rawdata = fs.readFileSync('./db.json');
-let employee = JSON.parse(rawdata);
+let employee = require('./db.json');
 
 router.get('/', (req, res) => {
    let outputJSON = {
@@ -35,5 +33,6 @@ router.get('/by_age/:start_age/:end_age', (req, res) => {
     }
     res.json(outputJSON);
 });
+
 
 module.exports = router;
