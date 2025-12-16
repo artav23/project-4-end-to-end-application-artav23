@@ -1,0 +1,13 @@
+{
+  "name": "vercel-employee-demo",
+  "version": "1.0.0",
+  "description": "Demo deployment of Express + Handlebars app",
+  "main": "restAPI_dev.js",
+  "scripts": {
+    "start": "node restAPI_dev.js"
+  },
+  
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
