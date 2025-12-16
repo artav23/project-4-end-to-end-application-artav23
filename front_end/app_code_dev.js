@@ -1,11 +1,11 @@
 var updateView = async (button) => {
     if (button.dataset.querytype == 'by_name') {
         let queryvalue = document.querySelector('#nameQuery').value
-        api = `http://localhost:3000/api/by_name/${queryvalue}`;
+        api = `/api/by_name/${queryvalue}`;
     } else if (button.dataset.querytype == 'by_age') {
         let queryStartAge = document.querySelector('#startAgeQuery').value
         let queryEndAge = document.querySelector('#endAgeQuery').value
-        api = `http://localhost:3000/api/by_age/${queryStartAge}/${queryEndAge}`;
+        api = `/api/by_age/${queryStartAge}/${queryEndAge}`;
     }
 
     const data = await fetch(api);
